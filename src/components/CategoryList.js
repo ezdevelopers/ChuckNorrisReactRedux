@@ -17,7 +17,7 @@ import {fetchCat} from '../redux/action/fetchCat';
             <Link to={{
               pathname: '/jokes/random',
               search: '?category='+ cat
-            }} className="cat-forward">forward</Link>
+            }}>Get Jokes</Link>
             </li>
         ))}
 

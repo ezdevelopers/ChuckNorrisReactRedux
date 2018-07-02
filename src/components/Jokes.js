@@ -9,10 +9,9 @@ class PostView extends Component {
 }
 
   render() {
-    console.log(this.props)
     return (
       <div>
-      <Link to="/" className="close-create-cat"></Link>
+      <Link to="/">Go Back</Link>
       <ol className='cat-list'>
       {this.props.jokes && this.props.jokes.map((joke)=>(
           <li key={joke.id} className="cat-list-item">
