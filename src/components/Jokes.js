@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {fetchJoke} from '../redux/action/fetchJoke';
 
-export default class PostView extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-        jokes:[]
-    };
-  }
-  
-  componentDidMount(){
-    fetch('https://api.chucknorris.io'+ this.props.location.pathname + this.props.location.search)
-    .then(res => res.json())
-    .then(data => this.setState({jokes: [data]}))
+class PostView extends Component {
+  componentWillMount(){
+    this.props.fetchJoke();
 }
 
   render() {
@@ -35,4 +28,6 @@ export default class PostView extends Component {
       </div>
     )
   }
+
 }
+export default  connect(null,{fetchJoke})(PostView)

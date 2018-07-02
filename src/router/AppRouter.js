@@ -9,6 +9,7 @@ export default class AppRouter extends Component {
     return (
         <BrowserRouter>
             <div>
+             {/** Available routers inside the chuck Norris app to get the home page and the path to jokes**/}
                 <Route exact path="/" component={ChuckNorris}/>
                 <Route path="/jokes" component={PostView}/>
             </div>
