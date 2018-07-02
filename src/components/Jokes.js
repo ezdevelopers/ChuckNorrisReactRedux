@@ -5,16 +5,16 @@ import {fetchJoke} from '../redux/action/fetchJoke';
 
 class PostView extends Component {
   componentWillMount(){
-    this.props.fetchJoke();
+    this.props.fetchJoke(this.props);
 }
 
   render() {
-    console.log(this.state.jokes)
+    console.log(this.props)
     return (
       <div>
       <Link to="/" className="close-create-cat"></Link>
       <ol className='cat-list'>
-      {this.state.jokes && this.state.jokes.map((joke)=>(
+      {this.props.jokes && this.props.jokes.map((joke)=>(
           <li key={joke.id} className="cat-list-item">
             <div className="cat-avatar" style={{backgroundImage: `url(${joke.icon_url})`}} ></div>
             <div className="cat-details">
@@ -30,4 +30,9 @@ class PostView extends Component {
   }
 
 }
-export default  connect(null,{fetchJoke})(PostView)
+const mapStateToProps = state => (
+  {
+    jokes:state.jokes.joke
+  }
+);
+export default connect(mapStateToProps,{ fetchJoke })(PostView);

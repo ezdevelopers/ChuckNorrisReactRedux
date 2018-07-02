@@ -6,5 +6,5 @@ import fetchJokeReducer from './fetchJokeReducer';
 //this function combines all the reducers in our app using the combineReducer function
 export default combineReducers({
     cat:fetchCatReducer,  
-    joke:fetchJokeReducer
+    jokes:fetchJokeReducer
 })

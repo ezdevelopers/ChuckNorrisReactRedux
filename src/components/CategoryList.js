@@ -4,9 +4,8 @@ import {connect} from 'react-redux';
 import {fetchCat} from '../redux/action/fetchCat';
 
  class Posts extends Component { 
-     componentDidMount(){
+     componentWillMount(){
        this.props.fetchCat();
-       console.log(this.props)
      }
   render() {
     return (
@@ -21,6 +20,7 @@ import {fetchCat} from '../redux/action/fetchCat';
             }} className="cat-forward">forward</Link>
             </li>
         ))}
+
         </ol>
       
       </div>
